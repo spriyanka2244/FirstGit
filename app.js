@@ -1,7 +1,9 @@
-var header = document.getElementById('header-title');
-header.style.borderBottom ='solid 3px #000';
 
+//get element by class name
 var items =document.getElementsByClassName('list-group-item');
-items[0].style.fontWeight='bold';
-items[0].style.backgroundColor ='yellow';
+items[2].style.backgroundColor ='green';
+
+for(var i=0;i<items.length;i++){
+   items[i].style.fontWeight='bold';
+}
 
