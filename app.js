@@ -1,21 +1,20 @@
-//get elements by tagname
-var li =document.getElementsByTagName('li');
-li[1].textContent='Hello 5';
-li[2].style.fontWeight='bold';
-li[4].style.backgroundColor='red';
+//query selector//
+var header= document.querySelector('#main-header');
+header.style.borderBottom='solid 4px #ccc';
 
-for(var i=0;i<li.length;i++){
-    li[4].style.backgroundColor="red";
-}
+var input =document.querySelector('input');
+input.value ='Hello world';
 
+var submit =document.querySelector('input[type="submit"]');
+submit.value="SEND"
 
-//editing by getelement by class name 
-var items =document.getElementsByClassName('list-group-item');
-for(var i=0;i<items.length;i++){
-      items[i].style.fontWeight='bold';
-  } 
+var item =document.querySelector('.list-group-item');
+item.style.color='red';
 
-var items1 =document.getElementsByClassName('list-group');
-for(var i=0;i<items.length;i++){
-    items[i].style.backgroundColor='yellow';
-} 
+var lastItem =document.querySelector
+('.list-group-item:last-child');
+lastItem.style.color='blue';
+
+var secondItem =document.querySelector
+('.list-group-item:nth-child(2)');
+secondItem.style.color='coral';
