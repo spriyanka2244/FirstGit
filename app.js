@@ -17,4 +17,26 @@ lastItem.style.color='blue';
 
 var secondItem =document.querySelector
 ('.list-group-item:nth-child(2)');
-secondItem.style.color='coral';
+secondItem.style.background='green';
+
+var thirdItem =document.querySelector
+('.list-group-item:nth-child(3)');
+thirdItem.style.visibility = "hidden";
+
+
+//query selector all
+//  var titles = document.querySelectorAll('.title');
+
+//  console.log(titles);
+//  titles[0].textContent='hello';
+
+//  var odd=document.querySelectorAll('li:nth-child(odd)');
+
+//  for(var i=0;i<odd.length;i++){
+//      odd[i].style.backgroundColor="green";
+
+//  }
+// var secondItem = document.querySelectorAll('.list-group-item');
+
+// secondItem[1].style.backgroundColor = "green"; 
+
