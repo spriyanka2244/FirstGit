@@ -1,42 +1,82 @@
-//query selector//
-var header= document.querySelector('#main-header');
-header.style.borderBottom='solid 4px #ccc';
-
-var input =document.querySelector('input');
-input.value ='Hello world';
-
-var submit =document.querySelector('input[type="submit"]');
-submit.value="SEND"
-
-var item =document.querySelector('.list-group-item');
-item.style.color='red';
-
-var lastItem =document.querySelector
-('.list-group-item:last-child');
-lastItem.style.color='blue';
-
-var secondItem =document.querySelector
-('.list-group-item:nth-child(2)');
-secondItem.style.background='green';
-
-var thirdItem =document.querySelector
-('.list-group-item:nth-child(3)');
-thirdItem.style.visibility = "hidden";
+// Traversing the DOM
 
 
-//query selector all
- var titles = document.querySelectorAll('.title');
+// parentElement
+// var itemList=document.querySelector('#items');
+// console.log(itemList.parent);
+// itemList.parentElement.style.backgroundColor='blue';
+// console.log(itemList.parentElement.parentElement.parentElement);
 
- console.log(titles);
- titles[0].textContent='hello';
+// lastelementchild
+// var itemList=document.querySelector('#items');
+// console.log(itemList.lastElementChild)
 
- var odd=document.querySelectorAll('li:nth-child(odd)');
+// lastchild
+// var itemList=document.querySelector('#items');
+// console.log(itemList.lastChild);
 
- for(var i=0;i<odd.length;i++){
-     odd[i].style.backgroundColor="green";
+// firstelementchild
+// var itemList=document.querySelector('#items');
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent="Hello 1";
 
- }
-var secondItem = document.querySelectorAll('.list-group-item');
+// firstchild
+// var itemList=document.querySelector('#items');
+// console.log(itemList.firstChild);
 
-secondItem[1].style.backgroundColor = "green"; 
+
+// nextsibling
+// var itemList=document.querySelector('#items');
+// console.log(itemList.nextSibling);
+
+
+// nextElementsibling
+// var itemList=document.querySelector('#items');
+// console.log(itemList.nextElementSibling);
+
+
+// previoussibling
+// var itemList=document.querySelector('#items');
+// console.log(itemList.previousSibling);
+
+
+// previouselementsibling
+// var itemList=document.querySelector('#items');
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color='green';
+
+
+// createElement
+// create a div
+
+// var newDiv = document.createElement('div');
+// console.log(newDiv);
+
+
+// //setAttribute error
+// var newDiv =document.createElement('div');
+
+// newDiv.className='hello';
+// newDiv.id='hello1';
+// newDiv.setAttribute('title','hello div');
+// console.log(newDiv);
+
+
+// //createtextnode
+// var newDivText = document.createTextNode('Hello world');
+// console.log(newDivText);
+
+
+// //appendchild
+
+var newDiv =document.createElement('div');
+
+newDiv.className='hello';
+newDiv.id='hello1';
+newDiv.setAttribute('title','hello div');
+
+var newDivText = document.createTextNode('Hello world');
+newDiv.appendChild(newDivText);
+
+console.log(newDiv);
 
