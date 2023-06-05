@@ -1,82 +1,49 @@
-// Traversing the DOM
+var form = document.getElementById('addForm');
+var itemList = document.getElementById('items');
 
+// Form submit event
+form.addEventListener('submit', addItem);
+// Delete event
+itemList.addEventListener('click', removeItem);
+// Filter event
 
-// parentElement
-// var itemList=document.querySelector('#items');
-// console.log(itemList.parent);
-// itemList.parentElement.style.backgroundColor='blue';
-// console.log(itemList.parentElement.parentElement.parentElement);
+// Add item
+function addItem(e){
+  e.preventDefault();
 
-// lastelementchild
-// var itemList=document.querySelector('#items');
-// console.log(itemList.lastElementChild)
+  // Get input value
+  var newItem = document.getElementById('item').value;
 
-// lastchild
-// var itemList=document.querySelector('#items');
-// console.log(itemList.lastChild);
+  // Create new li element
+  var li = document.createElement('li');
+  // Add class
+  li.className = 'list-group-item';
+  // Add text node with input value
+  li.appendChild(document.createTextNode(newItem));
 
-// firstelementchild
-// var itemList=document.querySelector('#items');
-// console.log(itemList.firstElementChild);
-// itemList.firstElementChild.textContent="Hello 1";
+  // Create del button element
+  var deleteBtn = document.createElement('button');
 
-// firstchild
-// var itemList=document.querySelector('#items');
-// console.log(itemList.firstChild);
+  // Add classes to del button
+  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
 
+  // Append text node
+  deleteBtn.appendChild(document.createTextNode('X'));
 
-// nextsibling
-// var itemList=document.querySelector('#items');
-// console.log(itemList.nextSibling);
+  // Append button to li
+  li.appendChild(deleteBtn);
 
+  // Append li to list
+  itemList.appendChild(li);
+}
 
-// nextElementsibling
-// var itemList=document.querySelector('#items');
-// console.log(itemList.nextElementSibling);
-
-
-// previoussibling
-// var itemList=document.querySelector('#items');
-// console.log(itemList.previousSibling);
-
-
-// previouselementsibling
-// var itemList=document.querySelector('#items');
-// console.log(itemList.previousElementSibling);
-// itemList.previousElementSibling.style.color='green';
-
-
-// createElement
-// create a div
-
-// var newDiv = document.createElement('div');
-// console.log(newDiv);
-
-
-// //setAttribute error
-// var newDiv =document.createElement('div');
-
-// newDiv.className='hello';
-// newDiv.id='hello1';
-// newDiv.setAttribute('title','hello div');
-// console.log(newDiv);
-
-
-// //createtextnode
-// var newDivText = document.createTextNode('Hello world');
-// console.log(newDivText);
-
-
-// //appendchild
-
-var newDiv =document.createElement('div');
-
-newDiv.className='hello';
-newDiv.id='hello1';
-newDiv.setAttribute('title','hello div');
-
-var newDivText = document.createTextNode('Hello world');
-newDiv.appendChild(newDivText);
-
-console.log(newDiv);
+// Remove item
+function removeItem(e){
+  if(e.target.classList.contains('delete')){
+    if(confirm('Are You Sure?')){
+      var li = e.target.parentElement;
+      itemList.removeChild(li);
+    }
+  }
+}
 
