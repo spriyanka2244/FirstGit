@@ -50,7 +50,7 @@
                     description,
                     selection
                  }
-                 localStorage.setItem('userDetails',JSON.stringify(obj))
+                 localStorage.setItem(obj.selection,JSON.stringify(obj))
                  showUserOnScreen(obj)
     }
     function showUserOnScreen(obj){
